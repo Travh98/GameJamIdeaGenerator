@@ -1,0 +1,6 @@
+Characters,Places
+Rubber Duck,Ocean
+Satan,Playground
+Salesman,Space Station
+Gondola Captain,Moon
+,Warehouse
