@@ -17,7 +17,7 @@ public class MainScreen : Control
 
     public override void _Ready()
     {
-        _storyColumn = GetNode<GeneratorColumn>("MarginContainer/VBoxContainer/MainHbox/StoryElements");
+        _storyColumn = GetNode<GeneratorColumn>("MarginContainer/HBoxContainer/VBoxContainer/MainHbox/StoryElements");
         _storyLineEditTitles = new List<String>();
         _storyLineEditTitles.Add("Protagonist");
         _storyLineEditTitles.Add("Antagonist");
@@ -28,7 +28,7 @@ public class MainScreen : Control
         _storyColumn.Connect("Signal_Reroll", this, nameof(Slot_RerollLineEdit));
         Connect(nameof(Signal_LineEditGenerated), _storyColumn, "Slot_NewLineEditValue");
 
-        _gameplayColumn = GetNode<GeneratorColumn>("MarginContainer/VBoxContainer/MainHbox/GameplayLoops");
+        _gameplayColumn = GetNode<GeneratorColumn>("MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameplayLoops");
         _gameplayLineEditTitles = new List<string>();
         _gameplayLineEditTitles.Add("LoopItem1");
         _gameplayLineEditTitles.Add("LoopItem2");

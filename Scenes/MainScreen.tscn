@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/GeneratorColumn.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/MainScreen.cs" type="Script" id=2]
 [ext_resource path="res://UI/NiceTheme.tres" type="Theme" id=3]
 [ext_resource path="res://UI/Travh98_128px.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Fonts/SpaceMono-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://UI/itch_128px.png" type="Texture" id=6]
+[ext_resource path="res://UI/github_128px.png" type="Texture" id=7]
+[ext_resource path="res://UI/youtube_128px.png" type="Texture" id=8]
+[ext_resource path="res://UI/KenneyBoardGameIcons/dice_3D_detailed.png" type="Texture" id=9]
+[ext_resource path="res://UI/KenneyBoardGameIcons/book_open.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
@@ -15,7 +28,7 @@ script = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
-color = Color( 0.384314, 0.313726, 0.313726, 1 )
+color = Color( 0.356863, 0.313726, 0.313726, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -26,155 +39,259 @@ margin_right = -50.0
 margin_bottom = -50.0
 theme = ExtResource( 3 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 924.0
-margin_bottom = 500.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1820.0
+margin_bottom = 980.0
 
-[node name="HeaderHbox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 924.0
-margin_bottom = 32.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 607.0
+margin_bottom = 980.0
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HeaderHbox"]
-margin_top = 6.0
-margin_right = 221.0
-margin_bottom = 26.0
+[node name="HeaderHbox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 607.0
+margin_bottom = 36.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HeaderHbox"]
+margin_right = 345.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
 text = "GAME JAM IDEA GENERATOR"
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HeaderHbox"]
-margin_left = 225.0
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HeaderHbox"]
+margin_left = 349.0
 margin_top = 6.0
-margin_right = 888.0
-margin_bottom = 26.0
+margin_right = 571.0
+margin_bottom = 30.0
 size_flags_horizontal = 3
 text = "by Travh98"
 align = 2
 
-[node name="TextureRect" type="TextureButton" parent="MarginContainer/VBoxContainer/HeaderHbox"]
-margin_left = 892.0
-margin_right = 924.0
-margin_bottom = 32.0
+[node name="TextureRect" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HeaderHbox"]
+margin_left = 575.0
+margin_right = 607.0
+margin_bottom = 36.0
 rect_min_size = Vector2( 32, 32 )
 texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 5
 
-[node name="MainHbox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 924.0
-margin_bottom = 500.0
+[node name="MainHbox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 607.0
+margin_bottom = 348.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 
-[node name="ThemeVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MainHbox"]
-margin_right = 305.0
-margin_bottom = 464.0
-size_flags_horizontal = 3
+[node name="ThemeVbox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox"]
+margin_right = 210.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 200, 40 )
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_right = 305.0
-margin_bottom = 20.0
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_right = 210.0
+margin_bottom = 24.0
 theme = ExtResource( 3 )
 text = "GAME JAM THEME"
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 24.0
-margin_right = 305.0
-margin_bottom = 44.0
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 28.0
+margin_right = 210.0
+margin_bottom = 52.0
 text = "THEME"
 
-[node name="ThemeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 48.0
-margin_right = 305.0
-margin_bottom = 78.0
+[node name="ThemeLineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 56.0
+margin_right = 210.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 200, 34 )
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 82.0
-margin_right = 305.0
-margin_bottom = 102.0
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 94.0
+margin_right = 210.0
+margin_bottom = 118.0
 text = "WILDCARDS/LIMITATIONS"
 
-[node name="WildcardLineEdit1" type="LineEdit" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 106.0
-margin_right = 305.0
-margin_bottom = 136.0
+[node name="WildcardLineEdit1" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 122.0
+margin_right = 210.0
+margin_bottom = 156.0
+rect_min_size = Vector2( 200, 34 )
 
-[node name="WildcardLineEdit2" type="LineEdit" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 140.0
-margin_right = 305.0
-margin_bottom = 170.0
+[node name="WildcardLineEdit2" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 160.0
+margin_right = 210.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 200, 34 )
 
-[node name="WildcardLineEdit3" type="LineEdit" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 174.0
-margin_right = 305.0
-margin_bottom = 204.0
+[node name="WildcardLineEdit3" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 198.0
+margin_right = 210.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 200, 34 )
 
-[node name="WildcardLineEdit4" type="LineEdit" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 208.0
-margin_right = 305.0
-margin_bottom = 238.0
+[node name="WildcardLineEdit4" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 236.0
+margin_right = 210.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 200, 34 )
 
-[node name="WildcardLineEdit5" type="LineEdit" parent="MarginContainer/VBoxContainer/MainHbox/ThemeVbox"]
-margin_top = 242.0
-margin_right = 305.0
-margin_bottom = 272.0
+[node name="WildcardLineEdit5" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/ThemeVbox"]
+margin_top = 274.0
+margin_right = 210.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 200, 34 )
 
-[node name="StoryElements" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MainHbox"]
-margin_left = 309.0
-margin_right = 614.0
-margin_bottom = 464.0
-size_flags_horizontal = 3
+[node name="StoryElements" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox"]
+margin_left = 214.0
+margin_right = 314.0
+margin_bottom = 308.0
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MainHbox/StoryElements"]
-margin_right = 305.0
-margin_bottom = 20.0
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/StoryElements"]
+margin_right = 100.0
+margin_bottom = 24.0
 text = "STORY"
 
-[node name="RegenerateButton" type="Button" parent="MarginContainer/VBoxContainer/MainHbox/StoryElements"]
-margin_top = 24.0
-margin_right = 305.0
-margin_bottom = 50.0
+[node name="RegenerateButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/StoryElements"]
+margin_top = 28.0
+margin_right = 100.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 100, 30 )
 theme = ExtResource( 3 )
-text = "REGENERATE"
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/MainHbox/StoryElements"]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/StoryElements"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 54.0
-margin_right = 305.0
-margin_bottom = 464.0
+margin_top = 62.0
+margin_right = 100.0
+margin_bottom = 308.0
 size_flags_vertical = 3
 
-[node name="GameplayLoops" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MainHbox"]
-margin_left = 618.0
-margin_right = 924.0
-margin_bottom = 464.0
-size_flags_horizontal = 3
+[node name="GameplayLoops" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox"]
+margin_left = 318.0
+margin_right = 448.0
+margin_bottom = 308.0
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MainHbox/GameplayLoops"]
-margin_right = 306.0
-margin_bottom = 20.0
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameplayLoops"]
+margin_right = 130.0
+margin_bottom = 24.0
 text = "GAMEPLAY LOOP"
 
-[node name="RegenerateButton" type="Button" parent="MarginContainer/VBoxContainer/MainHbox/GameplayLoops"]
-margin_top = 24.0
-margin_right = 306.0
-margin_bottom = 50.0
+[node name="RegenerateButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameplayLoops"]
+margin_top = 28.0
+margin_right = 100.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 100, 30 )
 theme = ExtResource( 3 )
-text = "REGENERATE"
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/MainHbox/GameplayLoops"]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameplayLoops"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 54.0
-margin_right = 306.0
-margin_bottom = 464.0
+margin_top = 62.0
+margin_right = 130.0
+margin_bottom = 308.0
 size_flags_vertical = 3
+
+[node name="DocumentGen" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 352.0
+margin_right = 607.0
+margin_bottom = 382.0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/DocumentGen"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 253.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/DocumentGen"]
+modulate = Color( 1, 0.945098, 0.635294, 1 )
+margin_left = 257.0
+margin_right = 607.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 350, 0 )
+text = "Generate Game Jam Plan Document"
+icon = ExtResource( 10 )
+align = 2
+icon_align = 2
+expand_icon = true
+
+[node name="FooterHbox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 386.0
+margin_right = 607.0
+margin_bottom = 410.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+margin_right = 200.0
+margin_bottom = 24.0
+text = "More cool things at:"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+margin_left = 204.0
+margin_right = 224.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+margin_left = 228.0
+margin_right = 248.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+margin_left = 252.0
+margin_right = 272.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+margin_left = 276.0
+margin_right = 346.0
+margin_bottom = 24.0
+text = "Travh98"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 350.0
+margin_right = 353.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="KenneyLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/FooterHbox"]
+margin_left = 357.0
+margin_right = 607.0
+margin_bottom = 24.0
+text = "UI Icons by www.kenney.nl"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 414.0
+margin_right = 607.0
+margin_bottom = 980.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 611.0
+margin_right = 1820.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
