@@ -13,6 +13,9 @@ public class StringDictionary : Node
         Characters = 0,
         Places,
         GameplayLoopItems,
+        Perspective,
+        Presentation,
+        ArtStyle,
         numColumns
     }
 

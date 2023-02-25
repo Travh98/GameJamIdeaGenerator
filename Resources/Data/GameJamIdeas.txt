@@ -1,15 +1,26 @@
-Characters,Places,GameplayLoopItems
-Rubber Duck,Ocean,Run to / from cover
-Satan,Playground,Find enemy
-Salesman,Space Station,Shoot
-Gondola Captain,Moon,Jump / Climb
-,Warehouse,Destroy environment
-,,Build up speed
-,,Collect & spend resources
-,,Connect parts of level
-,,Feed & care for others
-,,Deliver a package
-,,Avoid detection
-,,Construct defenses
-,,Solve puzzles
-,,Command NPCs to do things
+Characters,Places,GameplayLoopItems,Perspective,Presentation,Art Style
+Rubber Duck,Ocean,Run to / from cover,First Person,2D,Pixelated
+Satan,Playground,Find enemy,Third Person,3D,Hand Drawn
+Salesman,Space Station,Shoot,Top Down,,Low Poly / PS1
+Gondola Captain,Moon,Jump / Climb,Side Scroller,,Realism
+Hippopotamus,Warehouse,Destroy environment,Isometric,,Voxel
+Giraffe,Neighborhood,Build up speed,,,Cartoon
+Elephant,Downtown City,Collect & spend resources,,,Fantasy
+Squirrel,Desert,Connect parts of level,,,Steampunk
+Knight,Mountains,Feed & care for others,,,Sci-fi / Cyberpunk
+Princess,Forest,Deliver a package,,,Waterpaint
+Horse,Castle,Avoid detection,,,Monochromatic
+Soldier,Factory,Construct defenses,,,
+Fruit,Farm,Solve puzzles,,,
+Vegetable,Clocktower,Command NPCs to do things,,,
+Cow,Boat,Drive a vehicle,,,
+King,Library,Spawn portals,,,
+Wizard,Coffee Shop,Customize your environment,,,
+Witch,Restaurant,,,,
+Easter Bunny,Japan,,,,
+Medusa,Fruit Orchard,,,,
+Zeus,Sewer System,,,,
+Posideon,Tunnel System,,,,
+Zombie,,,,,
+Bacteria,,,,,
+Game Developer,,,,,

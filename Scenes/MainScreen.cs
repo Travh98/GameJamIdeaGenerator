@@ -8,6 +8,8 @@ public class MainScreen : Control
     List<String> _storyLineEditTitles;
     GeneratorColumn _gameplayColumn;
     List<String> _gameplayLineEditTitles;
+    GeneratorColumn _gametypeColumn;
+    List<String> _gametypeLineEditTitles;
 
     CsvLoader _csvLoader;
     StringDictionary _stringDict;
@@ -45,6 +47,17 @@ public class MainScreen : Control
         _gameplayColumn.Connect("Signal_Reroll", this, nameof(Slot_RerollLineEdit));
         Connect(nameof(Signal_LineEditGenerated), _gameplayColumn, "Slot_NewLineEditValue");
 
+        _gametypeColumn = GetNode<GeneratorColumn>("MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameType");
+        _gametypeLineEditTitles = new List<String>();
+        _gametypeLineEditTitles.Add("Perspective");
+        _gametypeLineEditTitles.Add("Presentation");
+        _gametypeLineEditTitles.Add("ArtStyle");
+        _gametypeColumn.CreateLineEdits(_gametypeLineEditTitles);
+
+        _gametypeColumn.Connect("Signal_Regenerate", this, nameof(Slot_RegenerateGameType));
+        _gametypeColumn.Connect("Signal_Reroll", this, nameof(Slot_RerollLineEdit));
+        Connect(nameof(Signal_LineEditGenerated), _gametypeColumn, "Slot_NewLineEditValue");
+
         _stringDict = new StringDictionary();
         _stringDict._Ready();
 
@@ -80,6 +93,14 @@ public class MainScreen : Control
             GenerateRandomText(title);
         }
     }
+    private void Slot_RegenerateGameType()
+    {
+        // Regenerate for all values
+        foreach(String title in _gametypeLineEditTitles)
+        {
+            GenerateRandomText(title);
+        }
+    }
 
     private void GenerateRandomText(String title)
     {
@@ -105,6 +126,21 @@ public class MainScreen : Control
             case "LoopItem6":
             {
                 text = _stringDict.GetRandomText(StringDictionary.ColumnName.GameplayLoopItems);
+                break;
+            }
+            case "Perspective":
+            {
+                text = _stringDict.GetRandomText(StringDictionary.ColumnName.Perspective);
+                break;
+            }
+            case "Presentation":
+            {
+                text = _stringDict.GetRandomText(StringDictionary.ColumnName.Presentation);
+                break;
+            }
+            case "ArtStyle":
+            {
+                text = _stringDict.GetRandomText(StringDictionary.ColumnName.ArtStyle);
                 break;
             }
             default:
@@ -141,10 +177,8 @@ public class MainScreen : Control
         jamPlan += _gameplayColumn.GetColumnStringData();
 
         jamPlan += "\n";
-        jamPlan += "(Coming soon) Game Type:" + "\n";
-        jamPlan += "\tPerspective: 1st Person, 3rd Person" + "\n";
-        jamPlan += "\tPresentation Style: 2D, 3D, Pokemon-style 2D," + "\n";
-        jamPlan += "\tArt Style: Pixelated, PS1-style, High-res quality" + "\n";
+        jamPlan += "Game Type:" + "\n";
+        jamPlan += _gametypeColumn.GetColumnStringData();
 
         jamPlan += "\n";
         jamPlan += "============================\n";

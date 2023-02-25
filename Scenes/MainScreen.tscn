@@ -204,6 +204,36 @@ margin_right = 130.0
 margin_bottom = 308.0
 size_flags_vertical = 3
 
+[node name="GameType" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox"]
+margin_left = 452.0
+margin_right = 552.0
+margin_bottom = 308.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameType"]
+margin_right = 100.0
+margin_bottom = 24.0
+text = "GAME TYPE"
+
+[node name="RegenerateButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameType"]
+margin_top = 28.0
+margin_right = 100.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 100, 30 )
+theme = ExtResource( 3 )
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/MainHbox/GameType"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 62.0
+margin_right = 100.0
+margin_bottom = 308.0
+size_flags_vertical = 3
+
 [node name="DocumentGen" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 352.0
 margin_right = 607.0
