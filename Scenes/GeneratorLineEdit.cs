@@ -6,7 +6,7 @@ public class GeneratorLineEdit : Control
     Label _titleLabel;
     LineEdit _lineEdit;
     Button _rerollButton;
-    CheckButton _lockCheckButton;
+    Button _lockButton;
     String titleName;
 
     [Signal]
@@ -17,7 +17,7 @@ public class GeneratorLineEdit : Control
         _titleLabel = GetNode<Label>("VBoxContainer/TitleLabel");
         _lineEdit = GetNode<LineEdit>("VBoxContainer/HBoxContainer/LineEdit");
         _rerollButton = GetNode<Button>("VBoxContainer/HBoxContainer/RerollButton");
-        _lockCheckButton = GetNode<CheckButton>("VBoxContainer/HBoxContainer/LockCheckButton");
+        _lockButton = GetNode<Button>("VBoxContainer/HBoxContainer/LockButton");
 
         _rerollButton.Connect("pressed", this, nameof(Slot_RerollPressed));
         SetTitle(titleName);
@@ -25,11 +25,10 @@ public class GeneratorLineEdit : Control
 
     public void Slot_SetLineEdit(String text)
     {
-        
-        // if(_lockCheckButton.ToggleMode == true)
-        // {
-        //     return;
-        // }
+        if(_lockButton.Pressed == true)
+        {
+            return;
+        }
         _lineEdit.Text = text;
     }
 

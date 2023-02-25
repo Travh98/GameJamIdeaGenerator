@@ -21,6 +21,12 @@ public class CsvLoader
                         continue;
                     }
 
+                    // Don't add the text if its empty
+                    if(line[i].Length < 1)
+                    {
+                        continue;
+                    }
+
                     // At the column in the dictionary,
                     // Add the string at the column from the csv file
                     targetDict.AddToColumn((StringDictionary.ColumnName)i, line[i]);

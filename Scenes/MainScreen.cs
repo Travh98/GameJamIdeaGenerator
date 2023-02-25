@@ -39,9 +39,6 @@ public class MainScreen : Control
     {
         // Reroll this single line edit
         GenerateRandomText(title);
-
-        // Emit signal to this line edit
-        GD.Print("Rerolling Line Edit: ", title);
     }
 
     private void Slot_RegenerateStory()
@@ -51,10 +48,6 @@ public class MainScreen : Control
         {
             GenerateRandomText(title);
         }
-
-        // Call the slots in story columns
-        GD.Print("Regenerating Story Elements");
-
     }
 
     private void GenerateRandomText(String title)
@@ -80,7 +73,6 @@ public class MainScreen : Control
             }
         }
 
-        GD.Print("MainScreen emitting title and text: ", title, text);
         EmitSignal(nameof(Signal_LineEditGenerated), title, text);
     }
 

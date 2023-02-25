@@ -10,7 +10,7 @@ public class StringDictionary : Node
 
     public enum ColumnName : int
     {
-        Characters,
+        Characters = 0,
         Places,
         numColumns
     }

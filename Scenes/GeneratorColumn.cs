@@ -45,11 +45,9 @@ public class GeneratorColumn : VBoxContainer
 
     public void Slot_NewLineEditValue(String title, String value)
     {
-        GD.Print("I see incoming new text ", title, " ", value);
         // "Premature optimization is the root of all evil" - Knuth
         foreach(GeneratorLineEdit lineEdit in _lineEdits)
         {
-            GD.Print("Comparing titles: ", title, " ", lineEdit.GetTitle());
             if(String.Compare(lineEdit.GetTitle(), title) == 0)
             {
                 lineEdit.Slot_SetLineEdit(value);
