@@ -16,7 +16,7 @@ public class CsvLoader
                 
                 for(int i = 0; i < (int)StringDictionary.ColumnName.numColumns; ++i)
                 {
-                    if(i > line.Length)
+                    if(i >= line.Length)
                     {
                         continue;
                     }

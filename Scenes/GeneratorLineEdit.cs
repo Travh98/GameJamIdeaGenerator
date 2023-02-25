@@ -42,6 +42,11 @@ public class GeneratorLineEdit : Control
         return _titleLabel.Text;
     }
 
+    public void SetTitleVisible(bool visible)
+    {
+        _titleLabel.Visible = visible;
+    }
+
     public void Slot_RerollPressed()
     {
         EmitSignal(nameof(Signal_Reroll), _titleLabel.Text);

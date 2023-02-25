@@ -1,6 +1,15 @@
-Characters,Places
-Rubber Duck,Ocean
-Satan,Playground
-Salesman,Space Station
-Gondola Captain,Moon
-,Warehouse
+Characters,Places,GameplayLoopItems
+Rubber Duck,Ocean,Run to / from cover
+Satan,Playground,Find enemy
+Salesman,Space Station,Shoot
+Gondola Captain,Moon,Jump / Climb
+,Warehouse,Destroy environment
+,,Build up speed
+,,Collect & spend resources
+,,Connect parts of level
+,,Feed & care for others
+,,Deliver a package
+,,Avoid detection
+,,Construct defenses
+,,Solve puzzles
+,,Command NPCs to do things

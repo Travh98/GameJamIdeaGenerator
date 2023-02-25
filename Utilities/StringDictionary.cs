@@ -12,6 +12,7 @@ public class StringDictionary : Node
     {
         Characters = 0,
         Places,
+        GameplayLoopItems,
         numColumns
     }
 
@@ -46,6 +47,14 @@ public class StringDictionary : Node
 
     public String GetRandomText(ColumnName column)
     {
+        if(Dict[column] == null)
+        {
+            return "NA";
+        }
+        if(Dict[column].Count < 1)
+        {
+            return "NA";
+        }
         int index = _randGen.RandiRange(1, Dict[column].Count - 1);
         return Dict[column][index];
     }

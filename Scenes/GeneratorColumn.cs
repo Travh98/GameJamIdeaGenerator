@@ -6,6 +6,7 @@ public class GeneratorColumn : VBoxContainer
 {
     PackedScene _lineEditScene = ResourceLoader.Load("res://Scenes/GeneratorLineEdit.tscn") as PackedScene;
     Button _regenerateButton;
+    VSeparator _spacer;
     List<GeneratorLineEdit> _lineEdits;
 
     [Signal]
@@ -19,6 +20,7 @@ public class GeneratorColumn : VBoxContainer
         _lineEdits = new List<GeneratorLineEdit>();
         _regenerateButton = GetNode<Button>("RegenerateButton");
         _regenerateButton.Connect("pressed", this, nameof(Slot_RegeneratePressed));
+        _spacer = GetNode<VSeparator>("VSeparator");
     }
 
     public void CreateLineEdits(List<String> genLineEdits)
@@ -30,6 +32,17 @@ public class GeneratorColumn : VBoxContainer
             lineEdit.SetTitle(title);
             lineEdit.Connect("Signal_Reroll", this, nameof(Slot_LineEditReroll));
             _lineEdits.Add(lineEdit);
+        }
+
+        MoveChild(_regenerateButton, GetChildCount());
+        MoveChild(_spacer, GetChildCount());
+    }
+
+    public void SetLineEditTitlesVisible(bool visible)
+    {
+        foreach(GeneratorLineEdit lineEdit in _lineEdits)
+        {
+            lineEdit.SetTitleVisible(visible);
         }
     }
 
