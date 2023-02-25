@@ -68,5 +68,14 @@ public class GeneratorColumn : VBoxContainer
         }
     }
 
-
+    public String GetColumnStringData()
+    {
+        String text = "";
+        foreach(GeneratorLineEdit lineEdit in _lineEdits)
+        {
+            text += "\t" + lineEdit.GetTitle() + ": "
+                + lineEdit.GetValue() + "\n";
+        }
+        return text;
+    }
 }

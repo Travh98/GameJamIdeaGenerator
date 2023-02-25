@@ -215,7 +215,7 @@ margin_right = 253.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/DocumentGen"]
+[node name="GenerateDocumentButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/DocumentGen"]
 modulate = Color( 1, 0.945098, 0.635294, 1 )
 margin_left = 257.0
 margin_right = 607.0
@@ -280,9 +280,24 @@ margin_right = 607.0
 margin_bottom = 24.0
 text = "UI Icons by www.kenney.nl"
 
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 414.0
+margin_right = 607.0
+margin_bottom = 465.0
+text = "Game Jam Plan Output: (I reccommend copying this to a shared document with your teammates)"
+autowrap = true
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 469.0
+margin_right = 607.0
+margin_bottom = 869.0
+rect_min_size = Vector2( 600, 400 )
+size_flags_vertical = 3
+text = "Game Jam Plan will go here once generated."
+
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 414.0
+margin_top = 873.0
 margin_right = 607.0
 margin_bottom = 980.0
 size_flags_vertical = 3

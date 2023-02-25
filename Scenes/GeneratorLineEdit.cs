@@ -47,6 +47,11 @@ public class GeneratorLineEdit : Control
         _titleLabel.Visible = visible;
     }
 
+    public String GetValue()
+    {
+        return _lineEdit.Text;
+    }
+
     public void Slot_RerollPressed()
     {
         EmitSignal(nameof(Signal_Reroll), _titleLabel.Text);
